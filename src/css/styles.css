@@ -1,0 +1,9 @@
+/* This file is intentionally left blank. */
+
+body {
+  font-family: "JetBrains Mono", monospace;
+  width: 100%;
+  width: 100vw;
+  margin: 0;
+  box-sizing: border-box;
+}
