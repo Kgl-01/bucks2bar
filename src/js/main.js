@@ -1,8 +1,19 @@
 document.addEventListener("DOMContentLoaded", () => {
   //input with id "username" on change
   const usernameInput = document.getElementById("username")
+
   if (usernameInput) {
-    usernameInput.addEventListener("input", (event) => {
+    /**
+     * Validates the username input against security requirements.
+     *
+     * Checks if the username contains at least one uppercase letter, one special character,
+     * one number, and is at least 8 characters long. Updates the input border color to
+     * indicate validation status (red for invalid, green for valid).
+     *
+     * @param {Event} event - The input event object from the username field
+     * @returns {void}
+     */
+    function usernameInputCallback(event) {
       const username = event.target.value
 
       //regex to check if username has atleast 1 capital letter, 1 special character, 1 number and is atleast 8 characters long
@@ -13,7 +24,9 @@ document.addEventListener("DOMContentLoaded", () => {
       } else {
         usernameInput.style.borderColor = "green"
       }
-    })
+    }
+
+    usernameInput.addEventListener("input", usernameInputCallback)
   }
 
   const months = [
